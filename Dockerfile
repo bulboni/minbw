@@ -20,6 +20,7 @@ WORKDIR /bw
 
 # Instal npm modules termasuk dotenv
 RUN npm install \
+    && npm install puppeteer@latest \
     && sh install.sh
 
 # Membuat direktori untuk SSH

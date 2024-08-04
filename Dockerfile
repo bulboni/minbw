@@ -18,10 +18,15 @@ RUN git clone https://github.com/gualgeol-code/bw
 # Set WORKDIR ke /bw sehingga semua operasi selanjutnya dilakukan dalam direktori ini
 WORKDIR /bw
 
-# Instal npm modules termasuk dotenv
-RUN npm install \
-    && npm install puppeteer@latest \
-    && sh install.sh
+# Hapus node_modules jika ada dan instal npm modules
+RUN rm -rf node_modules \
+    && npm install
+
+# Memastikan puppeteer versi terbaru diinstal
+RUN npm install puppeteer@latest
+
+# Jalankan skrip install.sh
+RUN sh install.sh
 
 # Membuat direktori untuk SSH
 RUN mkdir /run/sshd

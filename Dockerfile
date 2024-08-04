@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Update sistem dan instal paket yang diperlukan
 RUN apt update && apt upgrade -y && apt install -y \
-    ssh git wget curl ca-certificates gcc \
+    ssh git wget curl sudo ca-certificates gcc \
     libnss3 libatk1.0-0 libatk-bridge2.0-0 libcups2 libxcomposite1 libxrandr2 libgbm1 libxkbcommon0 libpango-1.0-0 libxdamage1 libxshmfence1 libglib2.0-0 libgconf-2-4 libasound2 \
     libx11-xcb1 libxcomposite1 libxcursor1 libxdamage1 libxi6 libxtst6 libnss3 libxss1 libxrandr2 libgbm1 libgtk-3-0 libxshmfence1 libxfixes3
 
